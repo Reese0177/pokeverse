@@ -12,7 +12,7 @@ function App() {
   const [pokemonFiltered, setPokemonFiltered] = useState([]);
 
   useEffect(()=>{
-    fetch(pokeApi).then((res)=>res.json()).then((json)=>{setPokemonRaw(json.results)});
+    fetch(pokeApi).then((res)=>res.json()).then((json)=>{setPokemonRaw(json.results); setPokemonFiltered(json.results)});
   }, []);
 
   function handleChange(e) {
