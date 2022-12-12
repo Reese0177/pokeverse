@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   function handleChange(e) {
-    const regex = new RegExp(e.target.value, 'gi');
+    const regex = new RegExp(e.target.value.replaceAll(' ','-'), 'gi');
     setPokemonFiltered(pokemonRaw.filter(pokemon => pokemon.name.match(regex)));
   }
 

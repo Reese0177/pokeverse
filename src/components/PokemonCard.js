@@ -13,7 +13,7 @@ function PokemonCard({ url, name }) {
     <Card>
       <Card.Img variant="top" src={pokemon.sprites.front_default} />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>{name.split('-').map(word => word.length > 1 ? word[0].toUpperCase() + word.substring(1) : `(${word.toUpperCase()})`).join(' ')}</Card.Title>
         <Card.Text as="div">
           Abilities:
           <ul>
