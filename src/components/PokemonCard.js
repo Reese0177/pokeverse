@@ -15,8 +15,9 @@ function PokemonCard({ url, name }) {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text as="div">
+          Abilities:
           <ul>
-            {pokemon.abilities.map(el=><li key={name+el.ability.name}>{el.ability.name}</li>)}
+            {pokemon.abilities.map(el=><li key={name+el.ability.name}>{el.ability.name.split('-').map(word => word[0].toUpperCase() + word.substring(1)).join(' ')}</li>)}
           </ul>
       </Card.Text>
       </Card.Body>
